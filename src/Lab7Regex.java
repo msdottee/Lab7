@@ -1,12 +1,5 @@
 import java.util.Scanner;
 
-/*
- * 
- * Lab 7 Starter Project
- * 
- * 
- */
-
 public class Lab7Regex {
 
 	public static void main(String[] args) {
@@ -27,6 +20,11 @@ public class Lab7Regex {
 		String phone = scnr.nextLine();
 		
 		validatePhone(phone);
+		
+		System.out.println("Please enter a valid date: ");
+		String date = scnr.nextLine();
+		
+		validateDate(date);
 
 	}
 
@@ -75,7 +73,7 @@ public class Lab7Regex {
 	public static boolean validateDate(String date) {
 
 		// change this to pass ALL tests
-		String regex = "";
+		String regex = "\\d{2}/\\d{2}/\\d{4}";
 
 		if (date.matches(regex)) {
 			System.out.println("Date is valid!");
