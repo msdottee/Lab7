@@ -39,6 +39,7 @@ public class Lab7Regex {
 		
 		validateHTML(HTML);
 
+		scnr.close();
 	}
 
 	public static boolean validateName(String name) {
