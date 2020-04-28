@@ -11,27 +11,40 @@ public class Lab7Regex {
 		
 		validateName(name);
 		
+		System.out.println();
+		
 		System.out.print("Please enter a valid email: ");
 		String email = scnr.nextLine();
 		
 		validateEmail(email);
+		
+		System.out.println();
 		
 		System.out.print("Please enter a valid phone number: ");
 		String phone = scnr.nextLine();
 		
 		validatePhone(phone);
 		
-		System.out.println("Please enter a valid date: ");
+		System.out.println();
+		
+		System.out.print("Please enter a valid date: ");
 		String date = scnr.nextLine();
 		
 		validateDate(date);
+		
+		System.out.println();
+		
+		System.out.print("Please enter a valid HTML: ");
+		String HTML = scnr.nextLine();
+		
+		validateHTML(HTML);
 
 	}
 
 	public static boolean validateName(String name) {
 
 		// change this to pass ALL tests
-		String regex = "[A-Z][a-z]{1,29}\\s[A-Z][a-z]{1,29}";
+		String regex = "[A-Z][a-z]{1,29}(\\s[A-Z][a-z]{1,29})?";
 
 		if (name.matches(regex)) {
 			System.out.println("Name is valid!");
@@ -80,6 +93,20 @@ public class Lab7Regex {
 			return true;
 		} else {
 			System.out.println("Sorry, date is not valid!");
+			return false;
+		}
+		
+	}
+	
+	public static boolean validateHTML(String HTML) {
+		
+		String regex = "<([a-zA-Z]*\\d*)>.*</([a-zA-Z]*\\d*)>";
+		
+		if(HTML.matches(regex)) {
+			System.out.println("HTML is valid!");
+			return true;
+		} else {
+			System.out.println("HTML is not valid!");
 			return false;
 		}
 	}
